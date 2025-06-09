@@ -1,2 +1,3 @@
 # Complex
-Complex lang
+
+Complex is a language that allows you to feel, see and manipulate the **event loop**. The conditions
