@@ -9,29 +9,29 @@ if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 const search = {
     fileExt: '.cx',
     i: 0,
-    j: this.i + 3,
+    j: search.i + 3,
     previous: null,
     current: null,
     foundFile: false,
     fileName: null,
     reset() {
-        this.i = 0; 
-        this.j = this.i + 3;
-        this.previous = this.current
-        this.current = null;
+        search.i = 0; 
+        search.j = search.i + 3;
+        search.previous = search.current
+        search.current = null;
     },
     next() {
-        this.i++;this.j++;
+        search.i++;search.j++;
     },
     set(value) {
-        this.previous = this.current;
-        this.current = value;
+        search.previous = search.current;
+        search.current = value;
     }
 
 }
 for (let arg = 0; arg < args.length; arg++) {
     const argStr = args[arg]
-    for (search; search.j <= argStr.length; null) {
+    for (;search.j <= argStr.length;) {
         search.set(argStr.slice(search.i, search.j));
         if (search.current == search.fileExt) {
             search.foundFile = true
