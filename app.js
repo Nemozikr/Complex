@@ -52,9 +52,6 @@ const reader = readline.createInterface({
 let lineNum = 0;
 
 
-class Parser {
-}
-
 reader.on('line', function (line) {
     lineNum++;
     console.log(line)
