@@ -9,7 +9,7 @@ if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 const search = {
     fileExt: '.cx',
     i: 0,
-    j: search.i + 3,
+    j: this.i + 3,
     previous: null,
     current: null,
     foundFile: false,
