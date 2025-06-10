@@ -49,10 +49,56 @@ const reader = readline.createInterface({
     input: fs.createReadStream(`${search.fileName}`)
 })
 
-let lineNum = 0;
+const Complex = {
+    process: {
+        line: 0,
+    },
+    state: []
+}
+
+const type = ['let', 'const'];
+const sign = ['+', '-'];
+const symbol = [';'];
+
+function evaluate(line) {
+    if (line[3] === '=') {
+        const val = line[4].replace(';', '');
+        Complex.state.push({
+            type: line[0],
+            name: line[1],
+            value: val,
+        });
+    }
+}
 
 
-reader.on('line', function (line) {
-    lineNum++;
-    console.log(line)
+function readUnderstand(line) {
+    let i = 0;
+    let current = '';
+    let statement = {
+        name: undefined,
+        type: undefined,
+    }
+    do {
+        // Read until ';' or end of line;
+        current += line[i];
+
+        if (type.includes(current.trim())) {
+            statement.type = current.trim();
+            current = '';
+        }
+        if (current === '=') {
+            statement.name = current.trim()
+        }
+        i++;
+    }while ( i < line.length );
+}
+
+reader.on('line', function (data) {
+    Complex.process.line++;
+    const line = data.split('');
+    //console.log(parts)
+    readUnderstand(line)
+    
+    console.log(Complex.state)
 })
