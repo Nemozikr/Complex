@@ -1,8 +1,8 @@
 const fs = require('node:fs');
 const process = require('node:process');
+const readline = require('readline');
 
 const args = process.argv.splice(2);
-console.log(args)
 
 if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 
@@ -42,15 +42,20 @@ for (let arg = 0; arg < args.length; arg++) {
     search.reset(this)
 }
 if (!search.foundFile) throw Error("No executables found");
-console.table(search)
 
-try {
-    const data = fs.readFileSync(`${search.fileName}`)
-} catch(err) {
-    console.error(err)
-}
+
+console.log(`Initialising ${search.fileName}\n`)
+const reader = readline.createInterface({
+    input: fs.createReadStream(`${search.fileName}`)
+})
+
+let lineNum = 0;
 
 
 class Parser {
-    
 }
+
+reader.on('line', function (line) {
+    lineNum++;
+    console.log(line)
+})
