@@ -10,11 +10,11 @@ const args = process.argv.splice(2);
 
 if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 
-Search(args);
+const fileName = Search(args);
 
-console.log(`Initialising ${search.fileName}\n`)
+console.log(`Initialising ${fileName}\n`)
 const reader = readline.createInterface({
-    input: fs.createReadStream(`${search.fileName}`)
+    input: fs.createReadStream(`${fileName}`)
 })
 
 const Complex = {
@@ -27,8 +27,6 @@ const Complex = {
 reader.on('line', function (data) {
     Complex.process.line++;
     const line = data.split();
-    //console.log(parts)
-    readUnderstand(line)
-    
+    console.log(line)
     console.log(Complex.state)
 })
