@@ -29,6 +29,7 @@ function Search(args) {
             if (search.current == search.EXT) {
                 search.foundFile = true
                 search.fileName = argStr;
+                return search.fileName;
             }
             search.next()
         }
