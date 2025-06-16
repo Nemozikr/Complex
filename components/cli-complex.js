@@ -1,4 +1,4 @@
-function Search() {
+function Search(args) {
     const search = {
         EXT: '.cmpx',
         i: 0,
