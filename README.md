@@ -15,6 +15,25 @@ This language was designed with control, visible flow and exploration in mind. I
 | `skip` | `skip` will return the program flow back to the start of the zone, while dropping all changes. |
 | `mergeskip` | `mergeskip` combined the effect of both, commits local changes into global state, starts from the beginning of the zone. |
 | `trace` | `trace` while used as `trace()` would output/log the data inside. |
+| `trace.template()` | This keyword takes in a variable or a literal with a variable, trace will print out the template each time a variable is modified. |
+
+## Unique Behaviour
+Be wary of unique behaviour of zones, zones do not update values outside of their scope automatically therefore merge or mergeskip must be used before those keywords to avoid an indefinite loop.
+
+### Infinite Loop of Zone
+```js
+let int a = 0;
+
+zone {
+  merge // nothing to commit
+  a++
+  if (a <= 10) {
+    skip;  // Upon reaching this point all changes that were NOT commited will be erased.
+  }
+
+}
+```
+
 
 ## Syntax
 
@@ -29,7 +48,7 @@ zone {
 
     mergeskip; // Commits a to global state
   }
-};
+}
 trace(a) // will log 11, as it skips committing upon reaching a = 11
 ```
 
@@ -59,10 +78,10 @@ zone {
   else if (enemyHP <= 0) trace("Enemy perished!")
   else {
     skip;
-  };
+  }
   
 
-} // if skip was not used, the zone would simply leave, since it doesn't check for conditions which would require to stay within zone loop
+} // Without 'skip', the zone exits after one iteration because it doesn't loop automatically.
 
 ```
 
