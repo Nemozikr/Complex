@@ -8,12 +8,13 @@ This language was designed with control, visible flow and exploration in mind. I
 
 ## Keywords
 
-| Left | Right |
+| Keyword/Function | Description |
 |:-----|:------|
 | `zone {}`| `zone` initiates a special loop in the brackets which allows the usage of keywords listed below. |
 | `merge`| `merge` commits the changes that occurred inside of a `zone`, continues with the flow. |
 | `skip` | `skip` will return the program flow back to the start of the zone, while dropping all changes. |
 | `mergeskip` | `mergeskip` combined the effect of both, commits local changes into global state, starts from the beginning of the zone. |
+| `trace` | `trace` while used as `trace()` would output/log the data inside. |
 
 ## Syntax
 
@@ -69,4 +70,7 @@ zone {
 
 This language is not yet installable, it is currently Work In Progress and reached Tokeniser stage.
 
+Stay tuned for any updates to this long-term project!
 
+Tokeniser: WIP...
+Parser: Soon™
