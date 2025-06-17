@@ -51,7 +51,7 @@ zone {
     mergeskip; // Commits a to global state
   }
 }
-trace(a) // will log 11, as it skips committing upon reaching a = 11
+trace(a) // Logs 11 — loop committed all increments before condition failed
 ```
 
 This example shows the simplest way that loops using zone functionality can be implemented. While showing the static typing yet enforcing semi-colons.
