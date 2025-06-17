@@ -67,9 +67,9 @@ let int enemyHP = 50;
 const int enemyDMG = 10;
 
 let int round = 0;
-trace.template(`Round ${round}!`) // This `trace` keyword will log this template everytime the variable changes.
+trace.template(`Round ${round}!`) // This trace call logs once per round, showing the round number as it changes.
 zone {
-  round++; // output: Round 1!... Round n!
+  round++
   if (round % 2 == 1) {
     enemyHP -= playerDMG;
   } else {
