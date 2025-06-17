@@ -1,21 +1,23 @@
 # Complex
 
-Complex is a language that allows you to feel, see and manipulate the **event loop**.
+Complex is a language that allows you to feel, observe, and manipulate the **event loop** directly.
+
+
 
 ## Purpose
-This language was designed with control, visible flow and exploration in mind. It fits most to logic and game logic, but is also planned to gain additional capabilities in backend.
+This language was designed with control, visible flow and exploration in mind. It is best suited for logic-heavy tasks such as game logic, and is also planned to gain additional capabilities in backend development.
 
 
 ## Keywords
 
 | Keyword/Function | Description |
 |:-----|:------|
-| `zone {}`| `zone` initiates a special loop in the brackets which allows the usage of keywords listed below. |
-| `merge`| `merge` commits the changes that occurred inside of a `zone`, continues with the flow. |
-| `skip` | `skip` will return the program flow back to the start of the zone, while dropping all changes. |
-| `mergeskip` | `mergeskip` combined the effect of both, commits local changes into global state, starts from the beginning of the zone. |
-| `trace` | `trace` while used as `trace()` would output/log the data inside. |
-| `trace.template()` | This keyword takes in a variable or a literal with a variable, trace will print out the template each time a variable is modified. |
+| `zone {}`| Starts a special loop block where the keywords below become active. |
+| `merge`| Commits local changes made inside the zone to the global state and continues execution. |
+| `skip` | Restarts the zone from the beginning, discarding uncommitted changes. |
+| `mergeskip` | Commits local changes and restarts the zone from the beginning. |
+| `trace` | Outputs/logs a value immediately. |
+| `trace.template()` | Logs a template string each time a referenced variable changes. Useful for observing state over time. |
 
 ## Unique Behaviour
 Be wary of unique behaviour of zones, zones do not update values outside of their scope automatically therefore merge or mergeskip must be used before those keywords to avoid an indefinite loop.
