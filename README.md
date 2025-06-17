@@ -19,23 +19,6 @@ This language was designed with control, visible flow and exploration in mind. I
 | `trace` | Outputs/logs a value immediately. |
 | `trace.template()` | Logs a template string each time a referenced variable changes. Useful for observing state over time. |
 
-## Unique Behaviour
-Zones do not automatically apply their internal changes to the global state. You must use merge or mergeskip to explicitly commit those changes. Otherwise, loops may repeat indefinitely without progress.
-
-### Infinite Loop of Zone
-```js
-let int a = 0;
-
-zone {
-  merge // nothing to commit
-  a++
-  if (a <= 10) {
-    skip;  // Discards a++, because it wasn’t committed
-  }
-
-}
-```
-
 
 ## Syntax
 
@@ -85,6 +68,23 @@ zone {
 
 } // Without 'skip', the zone exits after one iteration because it doesn't loop automatically.
 
+```
+
+## Unique Behaviour
+Zones do not automatically apply their internal changes to the global state. You must use merge or mergeskip to explicitly commit those changes. Otherwise, loops may repeat indefinitely without progress.
+
+### Infinite Loop of Zone
+```js
+let int a = 0;
+
+zone {
+  merge // nothing to commit
+  a++
+  if (a <= 10) {
+    skip;  // Discards a++, because it wasn’t committed
+  }
+
+}
 ```
 
 ## Installation
