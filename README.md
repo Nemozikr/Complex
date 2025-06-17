@@ -20,7 +20,7 @@ This language was designed with control, visible flow and exploration in mind. I
 | `trace.template()` | Logs a template string each time a referenced variable changes. Useful for observing state over time. |
 
 ## Unique Behaviour
-Be wary of unique behaviour of zones, zones do not update values outside of their scope automatically therefore merge or mergeskip must be used before those keywords to avoid an indefinite loop.
+Zones do not automatically apply their internal changes to the global state. You must use merge or mergeskip to explicitly commit those changes. Otherwise, loops may repeat indefinitely without progress.
 
 ### Infinite Loop of Zone
 ```js
@@ -30,7 +30,7 @@ zone {
   merge // nothing to commit
   a++
   if (a <= 10) {
-    skip;  // Upon reaching this point all changes that were NOT commited will be erased.
+    skip;  // Discards a++, because it wasn’t committed
   }
 
 }
