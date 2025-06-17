@@ -6,7 +6,7 @@ Complex is a language that allows you to feel, see and manipulate the **event lo
 ## Keywords
 
 | Left | Right |
-|:-----|------:|
+|:-----|:------|
 | `zone {}`| `zone` initiates a special loop in the brackets which allows the usage of keywords listed below. |
 | `merge`| `merge` commits the changes that occured inside of a `zone`, continues with the flow. |
 | `skip` | `skip` will return the program flow back to the start of the zone, while dropping all changes. |
@@ -18,7 +18,7 @@ The simplest counter, the zone will loop until a reaches 10.
 ```
 let int a = 0;
 zone {
-  if (a <= 10) mergeskip; // This keeps looping until a is 10 or abov
+  if (a <= 10) mergeskip; // This keeps looping until a is 10 or above
 }
 ```
 
