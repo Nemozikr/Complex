@@ -37,7 +37,7 @@ function Tokenise(file) {
             }
         }
     }
-    console.log(tokens);
+    return tokens;
 };
 
 module.exports = Tokenise;
