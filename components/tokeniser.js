@@ -9,7 +9,6 @@ const patterns = [
     {   type: "IDENTIFIER", regex: /^(\b[a-zA-Z_][a-zA-Z0-9_]*\b)/   },
     {   type: "BOOL_LOGIC", regex: /^(==|!=|<=|>=|=>|::|&&|\|\|)/   },
     {   type: "SYMBOLS", regex: /^([;{}()\[\]=+\-*/\.,])/ },
-    {   type: "UNKNOWN", regex: /^(w|d|\s)+/ }
 ];
 
 function Tokenise(file) {
