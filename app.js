@@ -5,12 +5,8 @@ const readline = require('readline');
 const Tokenise = require('./components/tokeniser');
 const Search = require('./components/cli-complex');
 
-const args = process.argv.splice(2);
 
-
-if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
-
-const fileName = Search(args);
+const fileName = Search(process.argv.splice(2));
 
 console.log(`Initialising ${fileName}\n`)
 const reader = readline.createInterface({

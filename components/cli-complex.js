@@ -22,6 +22,10 @@ function Search(args) {
         }
     
     }
+
+    // Initial check is the command Complex related
+    if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
+
     for (let arg = 0; arg < args.length; arg++) {
         const argStr = args[arg]
         for (;search.j <= argStr.length;) {
