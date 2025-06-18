@@ -2,7 +2,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 
-function Search(args) {
+function Search(input) {
     const search = {
         EXT: '.cmpx',
         i: 0,
@@ -27,6 +27,8 @@ function Search(args) {
     
     }
 
+    const starterPoint = (word) => word === 'complex';
+    const args = input.slice(input.findIndex(starterPoint));
     // Initial check is the command Complex related
     if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 
