@@ -11,14 +11,18 @@ const patterns = [
     {   type: "SYMBOLS", regex: /^([;{}()\[\]=+\-*/\.,])/ },
 ];
 
-function Tokenise(file) {
+function Tokenise(file, {KeepWhitespace} = true) {
     let source = file;
     let tokens = [];
     let nll = 0
     while (source.length > 0) {
         for (const {type, regex} of patterns) {
             const match = regex.exec(source);  
-            if (match) {
+            if (type === 'WHITESPACE' && KeepWhitespace == false) {
+                nll = 0;
+                source = source.slice(match[0].length);
+                break;
+            } else if (match) {
                 nll = 0;
                 tokens.push({   type,   value: match[0] })
                 source = source.slice(match[0].length);
