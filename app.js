@@ -10,7 +10,7 @@ const Tokenise = require('./components/tokeniser');
 const Search = require('./components/cli-complex');
 
 
-const fileName = Search(process.argv.splice(2));
+const fileName = Search(process.argv);
 
 console.log(`Initialising ${fileName}\n`)
 const reader = readline.createInterface({
