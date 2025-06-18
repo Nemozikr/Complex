@@ -95,7 +95,7 @@ Stay tuned for any updates to this long-term project!
 
 Tokeniser: Working well.
 
-Parser: Soon To Be WIP.
+Parser: WIP.
 
 
 ## License
