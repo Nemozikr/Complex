@@ -15,14 +15,16 @@ const patterns = [
     {   type: "SYMBOLS", regex: /^([;{}()\[\]=+\-*/\.,])/ },
 ];
 
-function Tokenise(file, {KeepWhitespace} = true) {
+function Tokenise(file, {KeepWhitespace, KeepComments} = true) {
     let source = file;
     let tokens = [];
     let nll = 0
     while (source.length > 0) {
         for (const {type, regex} of patterns) {
             const match = regex.exec(source);  
-            if (type === 'WHITESPACE' && KeepWhitespace == false) {
+
+            if ((type === 'WHITESPACE' && KeepWhitespace == false) 
+                || type === 'COMMENTS' && KeepComments == false) {
                 nll = 0;
                 source = source.slice(match[0].length);
                 break;
