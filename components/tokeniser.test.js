@@ -7,9 +7,12 @@ const Tokenise = require('./tokeniser');
 const answer = 'let x = 1;'
 
 const tokens = Tokenise(answer);
+
 let result = '';
-for (let token in tokens) {
-    result+= tokens[token]
+for (const token of tokens) {
+    result+= token.value
 }
 
-test()
+test("Tokenise and reconstruct input string correctly", () => {
+    expect(result).toBe(answer);
+})
