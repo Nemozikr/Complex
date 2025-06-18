@@ -20,11 +20,9 @@ function Tokenise(file) {
             const match = regex.exec(source);  
             if (match) {
                 nll = 0;
-                if (type) {
-                    tokens.push({   type,   value: match[0] })
-                    source = source.slice(match[0].length);
-                    break;
-                }
+                tokens.push({   type,   value: match[0] })
+                source = source.slice(match[0].length);
+                break;
             }
             
             
