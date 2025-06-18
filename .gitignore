@@ -1,0 +1,6 @@
+/node_modules/
+node_modules
+/.modules.yaml/
+/.pnpm-workspace-state.json/
+
+*-lock*
