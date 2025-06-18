@@ -96,3 +96,20 @@ Stay tuned for any updates to this long-term project!
 Tokeniser: WIP...
 
 Parser: Soon™
+
+
+## License
+
+This project is licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/).
+
+Each JavaScript source file includes the following notice:
+
+> This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.  
+> If a copy of the MPL was not distributed with this file, You can obtain one at [mozilla.org/MPL/2.0](https://www.mozilla.org/MPL/2.0/).
+
+The MPL allows you to:
+- Use this code commercially or personally
+- Modify and redistribute it
+- But you **must share modifications to MPL-covered files under the same license**
+
+The `app.cpmx` file is also considered MPL-covered.
