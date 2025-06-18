@@ -93,9 +93,9 @@ This language is not yet installable, it is currently Work In Progress and reach
 
 Stay tuned for any updates to this long-term project!
 
-Tokeniser: WIP...
+Tokeniser: Working well.
 
-Parser: Soon™
+Parser: Soon To Be WIP.
 
 
 ## License
