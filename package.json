@@ -1,0 +1,13 @@
+{
+  "name": "complex-lang",
+  "version": "0.0.2",
+  "description": "This version has a working Tokeniser",
+  "main": "app.js",
+  "scripts": {
+    "complex": "node app.js complex",
+    "test": "node ./components/tokeniser.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MPL-2.0"
+}
