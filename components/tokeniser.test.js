@@ -4,4 +4,12 @@
 
 const Tokenise = require('./tokeniser');
 
-const result = Tokenise('let x = 1;')
+const answer = 'let x = 1;'
+
+const tokens = Tokenise(answer);
+let result = '';
+for (let token in tokens) {
+    result+= tokens[token]
+}
+
+test()
