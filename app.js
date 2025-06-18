@@ -26,7 +26,7 @@ const Complex = {
 
 reader.on('line', function (data) {
     Complex.process.line++;
-    Tokenise(data);
+    const tokens = Tokenise(data);
     //console.log(data)
     //console.log(Complex.state)
 })
