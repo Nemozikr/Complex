@@ -2,7 +2,7 @@ function Search(args) {
     const search = {
         EXT: '.cmpx',
         i: 0,
-        j: this.i + 5,
+        j: 5,
         previous: null,
         current: null,
         foundFile: false,
