@@ -4,6 +4,7 @@
 
 const patterns = [
     {   type: "WHITESPACE", regex: /^(\s+)/   },
+    {   type: "COMMENT", regex: /^\/\/.*/},
     {   type: "NUMBER", regex: /^(\d+(\.\d+)?)/  },
     {   type: "DOUBLE_QUOTES", regex: /^("(?:\\.|[^"\\])*")/   },
     {   type: "SINGLE_QUOTES", regex: /^('(?:\\.|[^'\\])*)'/  },
