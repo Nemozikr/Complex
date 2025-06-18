@@ -6,8 +6,8 @@ const fs = require('node:fs');
 const process = require('node:process');
 const readline = require('readline');
 
-const Tokenise = require('./components/tokeniser');
-const Search = require('./components/cli-complex');
+const Tokenise = require('./src/tokeniser');
+const Search = require('./src/cli-complex');
 
 
 const fileName = Search(process.argv);

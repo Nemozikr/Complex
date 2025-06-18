@@ -1,0 +1,24 @@
+let int playerHP = 100;
+const int playerDMG = 10;
+
+let int enemyHP = 50;
+const int enemyDMG = 10;
+
+let int round = 0;
+trace.template(`Round ${round}!`) // This trace call logs once per round, showing the round number as it changes.
+zone {
+  round++
+  if (round % 2 == 1) {
+    enemyHP -= playerDMG;
+  } else {
+    playerHP -= enemyDMG;
+  }
+  merge;
+  if (playerHP <= 0) trace("Player Lost...")
+  else if (enemyHP <= 0) trace("Enemy perished!")
+  else {
+    skip;
+  }
+  
+
+} // Without 'skip', the zone exits after one iteration because it doesn't loop automatically.
