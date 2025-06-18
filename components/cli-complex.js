@@ -27,8 +27,7 @@ function Search(input) {
     
     }
 
-    const starterPoint = (word) => word === 'complex';
-    const args = input.slice(input.findIndex(starterPoint));
+    const args = input.slice(2);
     // Initial check is the command Complex related
     if (args[0] !== 'complex') throw Error(`${args[0]} is not a complex command`);
 
