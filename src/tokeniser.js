@@ -39,7 +39,7 @@ function Tokenise(file, {KeepWhitespace, KeepComments} = true) {
             
             if (match === null) {
                 nll++;
-                if (nll >= 10) {
+                if (nll > patterns.length) {
                     throw new Error("Lexer stuck: unable to match next token in source: " + source.slice(0, 25));
                 }
             }
